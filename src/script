@@ -1,0 +1,85 @@
+SHOW DATABASES;
+
+DROP DATABASE IF EXISTS SuperMarket;
+
+CREATE DATABASE IF NOT EXISTS SuperMarket;
+
+USE SuperMarket;
+
+SHOW TABLES ;
+
+DROP TABLE IF EXISTS Customer;
+CREATE TABLE IF NOT EXISTS Customer(
+    custID VARCHAR(6) PRIMARY KEY,
+    custTitle VARCHAR (30),
+    custName VARCHAR(30) NOT NULL DEFAULT 'Unknown',
+    custAddress VARCHAR (30),
+    city VARCHAR (20),
+    province VARCHAR (20),
+    postalCode VARCHAR (9)
+);
+
+SHOW TABLES ;
+DESCRIBE Customer;
+
+
+DROP TABLE IF EXISTS `Order`;
+CREATE TABLE IF NOT EXISTS `Order`(
+    orderID VARCHAR(6),
+    orderDate DATE,
+    orderTime VARCHAR (15),
+    custID VARCHAR (15),
+    discount DECIMAL (20,2) DEFAULT 0.00,
+    totalCost DECIMAL (20,2),
+    CONSTRAINT PRIMARY KEY (orderID),
+    CONSTRAINT FOREIGN KEY (custID) REFERENCES Customer(custID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+SHOW TABLES ;
+DESCRIBE `Order`;
+
+
+DROP TABLE IF EXISTS Item;
+CREATE TABLE IF NOT EXISTS Item(
+    itemCode VARCHAR(6) PRIMARY KEY,
+    description VARCHAR (50),
+    packSize VARCHAR (20),
+    unitPrice DECIMAL(6,2) DEFAULT 0.00,
+    qtyOnHand INT(5) DEFAULT 0,
+    discount DECIMAL (20,2) DEFAULT 0.00
+);
+
+SHOW TABLES ;
+DESCRIBE Item;
+
+
+DROP TABLE IF EXISTS OrderDetail;
+CREATE TABLE IF NOT EXISTS OrderDetail(
+    orderID VARCHAR (6),
+    itemCode VARCHAR (6),
+    unitPrice DECIMAL (20,2),
+    orderQty INT (11),
+    discount DECIMAL (6,2),
+    CONSTRAINT PRIMARY KEY(orderID, itemCode),
+    CONSTRAINT FOREIGN KEY(itemCode) REFERENCES Item(itemCode) ON DELETE CASCADE ON UPDATE CASCADE ,
+    CONSTRAINT FOREIGN KEY(orderID) REFERENCES `Order`(orderID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+SHOW TABLES ;
+DESCRIBE OrderDetail;
+
+
+DROP TABLE IF EXISTS Login;
+CREATE TABLE IF NOT EXISTS Login(
+    password VARCHAR (20),
+    userName VARCHAR (20),
+    jobRole VARCHAR(20),
+    CONSTRAINT PRIMARY KEY (userName)
+);
+
+SHOW TABLES ;
+DESCRIBE Login;
+SHOW TABLES ;
+
+INSERT INTO Login VALUES ('1234','admin065','Admin');
+INSERT INTO Login VALUES ('1234','cashier099','Cashier');

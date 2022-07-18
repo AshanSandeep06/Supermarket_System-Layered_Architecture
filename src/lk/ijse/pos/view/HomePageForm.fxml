@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="783.0" prefWidth="1406.0" style="-fx-background-color: #16287c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.HomePageFormController">
+   <children>
+      <ImageView fitHeight="783.0" fitWidth="1406.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/4877010.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="304.0" layoutY="64.0" text="WELCOME TO VIJITHA SUPER MARKET" textFill="#140017">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="38.0" />
+         </font>
+      </Label>
+      <JFXProgressBar fx:id="progressBar" layoutX="211.0" layoutY="662.0" prefHeight="15.0" prefWidth="890.0" />
+      <ProgressIndicator fx:id="progressPercentage" layoutX="1138.0" layoutY="659.0" prefHeight="21.0" prefWidth="59.0" progress="0.0" />
+      <ImageView fx:id="imgCart" fitHeight="235.0" fitWidth="240.0" layoutX="586.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/spalsh.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="1059.0" layoutY="755.0" prefHeight="19.0" prefWidth="333.0" text="Copyright 2021 Vijitha Super Market. All Rights Reserved.">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="755.0" text="Version 1.0.0">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

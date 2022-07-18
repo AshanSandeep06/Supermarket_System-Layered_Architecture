@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="751.0" prefWidth="1037.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.StockReportFormController">
+   <children>
+      <Text layoutX="93.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Balance Report ">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="66.0" fitWidth="73.0" layoutX="19.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/stock.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblItem" layoutX="62.0" layoutY="95.0" prefHeight="614.0" prefWidth="914.0" stylesheets="@../assets/styles/ItemForm.css">
+         <columns>
+            <TableColumn fx:id="colItemCode" prefWidth="104.0" text="Item Code" />
+            <TableColumn fx:id="colDescription" prefWidth="273.0" text="Description" />
+            <TableColumn fx:id="colPackSize" prefWidth="124.0" text="Pack Size" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="128.0" text="Qty On Hand" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="156.0" text="Unit Price(Rs.)" />
+            <TableColumn fx:id="colDiscount" prefWidth="128.0" text="Discount(Rs.)" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

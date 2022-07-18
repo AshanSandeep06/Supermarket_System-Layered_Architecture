@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="732.0" prefWidth="1024.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.IncomeReportsFormController">
+   <children>
+      <Text layoutX="101.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="425.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="765.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annually Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Separator layoutX="322.0" layoutY="81.0" orientation="VERTICAL" prefHeight="298.0" prefWidth="8.0" />
+      <Separator layoutX="683.0" layoutY="81.0" orientation="VERTICAL" prefHeight="298.0" prefWidth="8.0" />
+      <JFXDatePicker fx:id="dailyReportsDatePicker" defaultColor="#2980b9" layoutX="44.0" layoutY="165.0" prefHeight="38.0" prefWidth="251.0" style="-fx-border-color: BLACK; -fx-border-width: 2;" />
+      <JFXButton buttonType="RAISED" layoutX="109.0" layoutY="332.0" onAction="#dailyReportsOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ComboBox fx:id="cmbMonthlyYear" layoutX="409.0" layoutY="165.0" minHeight="38.0" prefHeight="38.0" prefWidth="251.0" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+      <Text layoutX="340.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="340.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbMonthlyMonth" layoutX="440.0" layoutY="238.0" minHeight="38.0" prefHeight="38.0" prefWidth="220.0" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+      <JFXButton buttonType="RAISED" layoutX="451.0" layoutY="332.0" onAction="#monthlyReportsOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="696.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbAnnuallyYear" layoutX="761.0" layoutY="165.0" minHeight="38.0" prefHeight="38.0" prefWidth="220.0" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+      <JFXButton buttonType="RAISED" layoutX="799.0" layoutY="332.0" onAction="#annuallyReportsOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="context" prefHeight="64.0" prefWidth="1024.0">
+         <children>
+            <Text layoutX="83.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Income Reports">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/Income%20report.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="407.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Wise Income">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <JFXButton buttonType="RAISED" layoutX="460.0" layoutY="645.0" onAction="#cusWiseIncomeOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Separator layoutX="62.0" layoutY="414.0" prefHeight="8.0" prefWidth="893.0" />
+      <ComboBox fx:id="cmbCustomerWiseIncome" layoutX="409.0" layoutY="495.0" minHeight="38.0" prefHeight="38.0" prefWidth="227.0" promptText="Customer ID" style="-fx-border-color: BLACK; -fx-border-width: 1;" />
+   </children>
+</AnchorPane>

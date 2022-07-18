@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="732.0" prefWidth="1024.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.ManageItemsFormController">
+   <children>
+      <Label layoutX="42.0" layoutY="163.0" text="Item Code :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="562.0" layoutY="221.0" text="Quantity On Hand :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="221.0" text="Description :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="281.0" text="Pack Size :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtItemCode" editable="false" layoutX="177.0" layoutY="159.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="258.0" promptText="I-001">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDescription" layoutX="177.0" layoutY="218.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="356.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPackSize" layoutX="177.0" layoutY="278.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="258.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQtyOnHand" layoutX="772.0" layoutY="218.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="203.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="562.0" layoutY="163.0" text="Unit Price :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUnitPrice" layoutX="692.0" layoutY="159.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="281.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="562.0" layoutY="281.0" text="Discount :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtDiscount" layoutX="692.0" layoutY="278.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="281.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <TextField fx:id="txtSearchItem" layoutX="42.0" layoutY="98.0" onAction="#txtSearchItemOnAction" onKeyReleased="#searchItemKeyRealeasedOnAction" prefHeight="40.0" prefWidth="247.0" promptText="Search Item" style="-fx-border-color: #2c3e50;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnAddItem" buttonType="RAISED" layoutX="341.0" layoutY="338.0" onAction="#addItemOnAction" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #16a085;" text="  Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdateItem" buttonType="RAISED" layoutX="513.0" layoutY="338.0" onAction="#updateItemOnAction" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #3498db;" text="   Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteItem" buttonType="RAISED" layoutX="698.0" layoutY="338.0" onAction="#deleteItemOnAction" prefHeight="39.0" prefWidth="148.0" style="-fx-background-color: #EA2027;" text="   Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="869.0" layoutY="338.0" onAction="#itemClearAllOnAction" prefHeight="39.0" prefWidth="108.0" style="-fx-background-color: #f1c40f #f1c40f;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblItem" layoutX="32.0" layoutY="390.0" prefHeight="320.0" prefWidth="961.0" stylesheets="@../assets/styles/ItemForm.css">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="106.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="295.0" text="Description" />
+            <TableColumn fx:id="colPackSize" minWidth="0.0" prefWidth="136.0" text="Pack Size" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="171.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="135.0" text="QtyOnHand" />
+            <TableColumn fx:id="colDiscount" prefWidth="117.0" text="Discount" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="358.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/add.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="711.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/trash.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="527.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-available-updates-100.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="context" prefHeight="64.0" prefWidth="1024.0">
+         <children>
+            <Text layoutX="83.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Items">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/food.png" />
+               </image>
+            </ImageView>
+            <JFXButton id="btnAddNewCustomer" fx:id="btnAddNewItem" buttonType="RAISED" layoutX="879.0" layoutY="20.0" onAction="#btnAddNextItem" prefHeight="35.0" prefWidth="122.0" style="-fx-cursor: hand; -fx-background-color: #f39c12 #f39c12;" text="+ New Item" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="324.0" layoutY="100.0" onAction="#searchItemOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #009432;" text="  Search" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="331.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-search-100.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

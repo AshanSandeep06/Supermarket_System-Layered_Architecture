@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="783.0" prefWidth="1406.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.LoginFormController">
+   <children>
+      <AnchorPane prefHeight="783.0" prefWidth="403.0" style="-fx-background-color: #16287c; -fx-border-color: BLACK;">
+         <children>
+            <Label layoutX="8.0" layoutY="758.0" text="Version 1.0.0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="148.0" layoutY="59.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="40.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="155.0" fitWidth="159.0" layoutX="123.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-person-100.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtUserName" layoutX="175.0" layoutY="439.0" onKeyReleased="#keyReleasedOnAction" prefHeight="33.0" prefWidth="205.0" style="-fx-border-color: #2980b9; -fx-border-color: BLACK;" />
+            <Label layoutX="26.0" layoutY="440.0" text="User Name :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="492.0" text="Password :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPwd" layoutX="175.0" layoutY="492.0" onKeyReleased="#keyReleasedOnAction" prefHeight="33.0" prefWidth="205.0" style="-fx-border-color: #2980b9; -fx-border-color: BLACK;" />
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="121.0" layoutY="654.0" onAction="#loginOnAction" prefHeight="29.0" prefWidth="163.0" style="-fx-background-color: #14539A;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="258.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-rating-circled-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="783.0" fitWidth="1003.0" layoutX="403.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/female-person-with-shopping-cart-taking-frozen-food-from-fridge-grocery-store.jpg" />
+         </image></ImageView>
+      <Label layoutX="444.0" layoutY="29.0" text="Vijitha Super Market" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="423.0" layoutY="717.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-email-64.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="464.0" layoutY="720.0" text="vijithasupermarket@gmail.com" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="423.0" layoutY="746.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-call-100.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="461.0" layoutY="750.0" text="+94 765631592" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="423.0" layoutY="685.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-facebook-100.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="464.0" layoutY="689.0" text="Vijitha Super Market" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Separator layoutX="444.0" layoutY="93.0" opacity="0.35" prefHeight="0.0" prefWidth="386.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="732.0" prefWidth="1024.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.MovableItemFormController">
+   <children>
+      <AnchorPane fx:id="context" prefHeight="64.0" prefWidth="1024.0">
+         <children>
+            <Text layoutX="83.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movable Items">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="24.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-shopping-cart-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="508.0" layoutY="100.0" orientation="VERTICAL" prefHeight="503.0" prefWidth="8.0" />
+      <JFXButton buttonType="RAISED" layoutX="184.0" layoutY="391.0" onAction="#mostMovableItemOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="706.0" layoutY="391.0" onAction="#leastMovableOnAction" prefHeight="38.0" prefWidth="122.0" style="-fx-background-color: #16a085;" text="Get Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="340.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Que%20Mark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="873.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Que%20Mark.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="138.0" layoutY="129.0" text="Most Movable Item">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="670.0" layoutY="129.0" text="Least Movable Item">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="158.0" fitWidth="212.0" layoutX="139.0" layoutY="178.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/Happy%20Man-min.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="158.0" fitWidth="212.0" layoutX="661.0" layoutY="178.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/sad%20man-min.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

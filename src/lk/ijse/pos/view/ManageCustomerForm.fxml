@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="732.0" prefWidth="1024.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.ManageCustomerFormController">
+   <children>
+      <JFXTextField fx:id="txtCustomerId" editable="false" labelFloat="true" layoutX="71.0" layoutY="154.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="265.0" promptText="Customer ID">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="334.0" layoutY="88.0" onAction="#SearchCustomerOnAction" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #009432;" text="  Search" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtCusName" labelFloat="true" layoutX="71.0" layoutY="214.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMobileNumber" labelFloat="true" layoutX="71.0" layoutY="275.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="Mobile Number">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="574.0" layoutY="356.0" onAction="#updateCustomerOnAction" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #3498db;" text="   Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnRemove" buttonType="RAISED" layoutX="734.0" layoutY="356.0" onAction="#removeCustomerOnAction" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #EA2027;" text="   Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblCustomer" layoutX="22.0" layoutY="411.0" prefHeight="297.0" prefWidth="981.0" stylesheets="@../assets/styles/ItemForm.css">
+         <columns>
+            <TableColumn fx:id="colCusId" prefWidth="102.0" text="Customer ID" />
+            <TableColumn fx:id="colCusTitle" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="colCusName" prefWidth="170.0" text="Name" />
+            <TableColumn fx:id="colCusAddress" prefWidth="147.0" text="Address" />
+            <TableColumn fx:id="colCusCity" prefWidth="95.0" text="City" />
+            <TableColumn fx:id="colCusProvince" prefWidth="154.0" text="Province" />
+            <TableColumn fx:id="colCusPostalCode" prefWidth="98.0" text="Postal Code" />
+            <TableColumn fx:id="colCusMobileNumber" prefWidth="139.0" text="Mobile Number" />
+         </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="896.0" layoutY="356.0" onAction="#resetOnAction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-radius: 15; -fx-background-color: #f1c40f;" text="Reset" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="context" prefHeight="64.0" prefWidth="1024.0">
+         <children>
+            <Text layoutX="83.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Customers">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/customer111.png" />
+               </image>
+            </ImageView>
+            <JFXButton id="btnAddNewCustomer" fx:id="btnAddNewCustomer" buttonType="RAISED" layoutX="860.0" layoutY="20.0" onAction="#btnAddNextCusOnAction" prefHeight="35.0" prefWidth="141.0" style="-fx-cursor: hand; -fx-background-color: #f39c12 #f39c12;" text="+ New Customer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="txtCusAddress" labelFloat="true" layoutX="563.0" layoutY="101.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="Address">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCusCity" labelFloat="true" layoutX="563.0" layoutY="159.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="City">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCusProvince" labelFloat="true" layoutX="563.0" layoutY="220.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="Province">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPostalCode" labelFloat="true" layoutX="563.0" layoutY="283.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="Postal Code">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="583.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-available-updates-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="743.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/trash.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="414.0" layoutY="356.0" onAction="#addCustomerOnAction" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #16a085;" text="  Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="21.0" fitWidth="34.0" layoutX="431.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/add.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="343.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-search-100.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbCustomerTitle" layoutX="71.0" layoutY="339.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="37.0" prefWidth="306.0" promptText="Customer Title" />
+      <TextField fx:id="txtSearchCustomer" layoutX="61.0" layoutY="88.0" onAction="#txtSearchCustomerOnAction" onKeyReleased="#searchCustomerKeyReleasedOnAction" prefHeight="40.0" prefWidth="247.0" promptText="Search Customer" style="-fx-border-color: #2c3e50;">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

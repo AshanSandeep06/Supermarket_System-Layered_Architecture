@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="context" prefHeight="1078.0" prefWidth="1942.0" style="-fx-background-color: #F3F3F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.pos.controller.CashierDashBoardFormController">
+   <children>
+      <Pane prefHeight="72.0" prefWidth="1942.0" style="-fx-background-color: #223A96;">
+         <children>
+            <Text fill="WHITE" layoutX="482.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cashier :">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="lblCashierName" fill="WHITE" layoutX="596.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ashan Sandeep" wrappingWidth="330.1748046875">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="lblDate" fill="WHITE" layoutX="1239.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2022-06-03" wrappingWidth="142.4306640625">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="lblTime" fill="WHITE" layoutX="971.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="14:16:25 PM" wrappingWidth="199.43066219240427">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Button layoutX="1761.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="28.0" prefWidth="128.0" style="-fx-background-color: RED; -fx-background-radius: 25;" text="LOGOUT" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="101.0" layoutY="20.0" text="CASHIER DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="1522.0" layoutY="14.0" onAction="#manageOrdersOnAction" prefHeight="44.0" prefWidth="191.0" style="-fx-background-color: #3498db;" text="Manage Orders" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Circle fill="WHITE" layoutX="55.0" layoutY="35.0" radius="24.0" stroke="WHITE" strokeType="INSIDE" />
+            <ImageView fitHeight="44.0" fitWidth="36.0" layoutX="37.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/cashier3.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fill="#2f2a2a" layoutX="518.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblOrderId" fill="#2f2a2a" layoutX="625.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="150.99998658895493">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Circle layoutX="57.0" layoutY="108.0" opacity="0.7" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <ComboBox fx:id="cmbCustomerId" layoutX="76.0" layoutY="223.0" prefHeight="40.0" prefWidth="288.0" promptText="Customer Id" style="-fx-border-width: 1; -fx-border-color: black;" />
+      <JFXTextField fx:id="txtCusName" editable="false" labelFloat="true" layoutX="421.0" layoutY="223.0" prefHeight="40.0" prefWidth="314.0" promptText="Customer Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCusMobileNumber" editable="false" labelFloat="true" layoutX="808.0" layoutY="223.0" prefHeight="40.0" prefWidth="280.0" promptText="Mobile Number">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCusTitle" editable="false" labelFloat="true" layoutX="1172.0" layoutY="223.0" prefHeight="40.0" prefWidth="267.0" promptText="Customer Title">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCusAddress" editable="false" labelFloat="true" layoutX="421.0" layoutY="300.0" prefHeight="40.0" prefWidth="288.0" promptText="Customer Address">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCusCity" editable="false" labelFloat="true" layoutX="770.0" layoutY="300.0" prefHeight="40.0" prefWidth="304.0" promptText="City">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtProvince" editable="false" labelFloat="true" layoutX="1151.0" layoutY="300.0" prefHeight="40.0" prefWidth="288.0" promptText="Province">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="1496.0" layoutY="292.0" onAction="#manageCustomerFormOnAction" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #16a085; -fx-background-radius: 3;" text="        Manage Customer">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="83.0" layoutY="92.0" text="Customer Details">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="32.0" fitWidth="36.0" layoutX="1510.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/cashier%20manage%20cus.png" />
+         </image></ImageView>
+      <JFXTextField fx:id="txtPostalCode" editable="false" labelFloat="true" layoutX="1518.0" layoutY="223.0" prefHeight="40.0" prefWidth="288.0" promptText="Postal Code">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSearchMobileNumber" labelFloat="true" layoutX="76.0" layoutY="150.0" onAction="#txtSearchOnAction" onKeyReleased="#mobileNumberValidateOnAction" prefHeight="44.0" prefWidth="306.0" promptText="Search by mobile number">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSearchCustomer" buttonType="RAISED" layoutX="421.0" layoutY="153.0" onAction="#mobileNumberSearchOnAction" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: #f39c12 #f39c12;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Circle layoutX="57.0" layoutY="404.0" opacity="0.7" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="83.0" layoutY="388.0" text="Item Details">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutY="373.0" prefHeight="0.0" prefWidth="1942.0" style="-fx-border-width: 1; -fx-background-color: black;">
+         <effect>
+            <ColorAdjust brightness="-0.35" />
+         </effect>
+      </Separator>
+      <ComboBox fx:id="cmbItemCode" layoutX="76.0" layoutY="440.0" onKeyReleased="#checkOnAction" prefHeight="40.0" prefWidth="288.0" promptText="Item code" style="-fx-border-width: 1; -fx-border-color: BLACK;" />
+      <JFXTextField fx:id="txtDescription" editable="false" labelFloat="true" layoutX="421.0" layoutY="440.0" onKeyReleased="#checkOnAction" prefHeight="40.0" prefWidth="400.0" promptText="Description">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPackSize" editable="false" labelFloat="true" layoutX="889.0" layoutY="440.0" onKeyReleased="#checkOnAction" prefHeight="40.0" prefWidth="288.0" promptText="Pack Size">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="421.0" layoutY="519.0" onKeyReleased="#checkOnAction" prefHeight="40.0" prefWidth="288.0" promptText="Discount">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUnitPrice" editable="false" labelFloat="true" layoutX="1244.0" layoutY="440.0" onKeyReleased="#checkOnAction" prefHeight="40.0" prefWidth="288.0" promptText="Unit Price">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQtyOnHand" editable="false" labelFloat="true" layoutX="1602.0" layoutY="440.0" onKeyReleased="#checkOnAction" prefHeight="40.0" prefWidth="288.0" promptText="Qty On Hand">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAddItem" buttonType="RAISED" layoutX="1135.0" layoutY="518.0" onAction="#addToCartOnAction" prefHeight="44.0" prefWidth="171.0" style="-fx-background-color: #16a085;" stylesheets="@../assets/styles/Button.css" text="      Add to cart">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1603.0" layoutY="517.0" onAction="#clearOnAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #f1c40f;" text="Clear">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtQuantity" layoutX="821.0" layoutY="517.0" onKeyReleased="#checkOnAction" prefHeight="44.0" prefWidth="183.0" promptText="Quantity" style="-fx-border-color: #2c3e50;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="1150.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/add.png" />
+         </image>
+      </ImageView>
+      <Separator layoutY="600.0" prefHeight="0.0" prefWidth="1942.0" style="-fx-border-width: 1; -fx-background-color: black;">
+         <effect>
+            <ColorAdjust brightness="-0.35" />
+         </effect>
+      </Separator>
+      <Circle layoutX="57.0" layoutY="629.0" opacity="0.7" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="83.0" layoutY="613.0" text="List of items">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblCart" layoutX="76.0" layoutY="671.0" onMousePressed="#tblOnAction" prefHeight="307.0" prefWidth="1097.0" style="-fx-border-color: black;" stylesheets="@../assets/styles/ItemForm.css">
+         <columns>
+            <TableColumn fx:id="colItemCode" prefWidth="104.00003051757812" text="Item Code" />
+            <TableColumn fx:id="colDescription" prefWidth="300.0000305175781" text="Description" />
+            <TableColumn fx:id="colPackSize" prefWidth="139.0" text="Pack Size" />
+            <TableColumn fx:id="colQuantity" prefWidth="112.0" text="Quantity" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="144.0" text="Unit Price" />
+            <TableColumn fx:id="colDiscount" prefWidth="107.0" text="Discount(Rs.)" />
+            <TableColumn fx:id="colTotalCost" prefWidth="189.0" text="Total Cost(Rs.)" />
+         </columns>
+      </TableView>
+      <Label layoutX="76.0" layoutY="1006.0" text="Total :">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotalCost" layoutX="150.0" layoutY="1004.0" prefHeight="36.0" prefWidth="151.0" text="0.00" textFill="#cd0101">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnRemoveItem" buttonType="RAISED" layoutX="539.0" layoutY="1000.0" onAction="#removeItemOnAction" prefHeight="44.0" prefWidth="171.0" style="-fx-background-color: #e84118;" stylesheets="@../assets/styles/Button.css" text="     Remove Item" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1044.0" layoutY="1004.0" onAction="#clearTableOnAction" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #f1c40f;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="454.0" layoutY="1003.0" onAction="#decreaseQtyOnAction" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #16a085;" text="-" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="751.0" layoutY="1003.0" onAction="#increaseQtyOnAction" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: #16a085;" text="+" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="546.0" layoutY="1010.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/trash%20bin.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="1007.0" layoutY="838.0" prefHeight="3.0" prefWidth="477.0" rotate="90.0" style="-fx-border-width: 1; -fx-background-color: black;">
+         <effect>
+            <ColorAdjust brightness="-0.35" />
+         </effect>
+      </Separator>
+      <JFXButton buttonType="RAISED" layoutX="1388.0" layoutY="518.0" onAction="#openStockReportOnAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #90A4AE;" text="Stock">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnCancelOrder" buttonType="RAISED" layoutX="1348.0" layoutY="982.0" onAction="#cancelOrderOnAction" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #e84118;" stylesheets="@../assets/styles/Button.css" text="Cancel Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnPlaceOrder" buttonType="RAISED" layoutX="1647.0" layoutY="982.0" onAction="#placeOrderOnAction" prefHeight="50.0" prefWidth="183.0" style="-fx-background-color: #008D30;" stylesheets="@../assets/styles/Button.css" text="Place Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="1365.0" layoutY="667.0" text="Gross Amount    :- ">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="1365.0" layoutY="721.0" text="Total Discount    :- ">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="1366.0" layoutY="790.0" text="Net Amount       :- ">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1609.0" layoutY="657.0" prefHeight="55.0" prefWidth="74.0" text="Rs.">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1609.0" layoutY="711.0" prefHeight="55.0" prefWidth="74.0" text="Rs.">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1609.0" layoutY="780.0" prefHeight="55.0" prefWidth="74.0" text="Rs." textFill="#f70202">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="1595.0" layoutY="772.0" prefHeight="3.0" prefWidth="202.0" style="-fx-background-color: black;" />
+      <Text fx:id="lblGrossAmount" layoutX="1680.0" layoutY="693.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="183.00003510713577">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblTotalDiscount" layoutX="1680.0" layoutY="747.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="183.00003510713577">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblNetAmount" fill="#f70202" layoutX="1681.0" layoutY="816.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="183.00003510713577">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <JFXButton buttonType="RAISED" layoutX="1763.0" layoutY="294.0" onAction="#clearCustomerFieldsOnAction" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #f1c40f;" text="Clear">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
