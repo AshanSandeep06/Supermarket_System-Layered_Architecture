@@ -93,7 +93,7 @@ public class CashierDashBoardFormController {
     public TableView<CartTM> tblCart;
 
     //Property Injection
-    private CashierDashBoardBO cashierDashBoardBO = (CashierDashBoardBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CASHIERDASHBOARDBO);
+    private final CashierDashBoardBO cashierDashBoardBO = (CashierDashBoardBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CASHIERDASHBOARDBO);
 
     public void initialize() {
         colItemCode.setCellValueFactory(new PropertyValueFactory<>("itemCode"));
@@ -142,9 +142,9 @@ public class CashierDashBoardFormController {
                         setItemData(newValue);
 
                         CartTM tm = isExists(newValue.getItemCode());
-                        if(tm!=null){
+                        if (tm != null) {
                             txtQtyOnHand.setText(String.valueOf(newValue.getQtyOnHand() - tm.getQty()));
-                        }else{
+                        } else {
                             txtQtyOnHand.setText(String.valueOf(newValue.getQtyOnHand()));
                         }
                     }
@@ -189,7 +189,7 @@ public class CashierDashBoardFormController {
         Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO, (ev) -> {
             LocalTime currentTime = LocalTime.now();
             int hour = currentTime.getHour();
-            String second = currentTime.getSecond()<10 ? "0"+currentTime.getSecond() : String.valueOf(currentTime.getSecond());
+            String second = currentTime.getSecond() < 10 ? "0" + currentTime.getSecond() : String.valueOf(currentTime.getSecond());
             if (hour >= 12) {
                 lblTime.setText(currentTime.getHour() + ":" + currentTime.getMinute() + ":" + second + " PM");
             } else {
@@ -315,10 +315,10 @@ public class CashierDashBoardFormController {
             txtSearchMobileNumber.setStyle("-fx-text-fill: BLACK");
             btnSearchCustomer.setDisable(false);
         } else {
-            if(txtSearchMobileNumber.getText().length()>0){
+            if (txtSearchMobileNumber.getText().length() > 0) {
                 txtSearchMobileNumber.setStyle("-fx-text-fill: RED");
                 btnSearchCustomer.setDisable(true);
-            }else{
+            } else {
                 txtSearchMobileNumber.setStyle("-fx-text-fill: BLACK");
                 btnSearchCustomer.setDisable(true);
             }
@@ -344,7 +344,7 @@ public class CashierDashBoardFormController {
                     if (customerDTO != null) {
                         setCustomerData(customerDTO);
                     } else {
-                        NotificationUtil.setNotifications("Customer doesn't exist", "There is no customer associated with this Mobile number - " +mobileNumber, 3);
+                        NotificationUtil.setNotifications("Customer doesn't exist", "There is no customer associated with this Mobile number - " + mobileNumber, 3);
                     }
                 } else {
                     NotificationUtil.setNotifications("Invalid Mobile Number", "Please enter a valid Mobile Number..!", 3);
@@ -396,23 +396,23 @@ public class CashierDashBoardFormController {
             } else {
                 btnAddItem.setDisable(true);
                 if (txtQuantity.getText().length() > 0) {
-                    if(txtQuantity.getText().matches("^[1-9][0-9]{0,4}$") ){
+                    if (txtQuantity.getText().matches("^[1-9][0-9]{0,4}$")) {
                         txtQuantity.setStyle("-fx-text-fill: BLACK");
                         txtQuantity.setStyle("-fx-border-color: #F3F3F3");
-                    }else {
+                    } else {
                         txtQuantity.setStyle("-fx-text-fill: RED");
                         txtQuantity.setStyle("-fx-border-color: RED");
                     }
-                }else{
+                } else {
                     txtQuantity.setStyle("-fx-text-fill: BLACK");
                 }
-                if(txtDiscount.getText().length() > 0){
-                    if(txtDiscount.getText().matches("^[0-9]{1,6}([.][0-9]{2})?$")){
+                if (txtDiscount.getText().length() > 0) {
+                    if (txtDiscount.getText().matches("^[0-9]{1,6}([.][0-9]{2})?$")) {
                         txtDiscount.setStyle("-fx-text-fill: BLACK");
-                    }else{
+                    } else {
                         txtDiscount.setStyle("-fx-text-fill: RED");
                     }
-                }else{
+                } else {
                     txtDiscount.setStyle("-fx-text-fill: BLACK");
                 }
             }
@@ -528,7 +528,7 @@ public class CashierDashBoardFormController {
 
     public void tblOnAction(MouseEvent event) {
         btnRemoveItem.setDisable(false);
-        if(tblCart.getItems().isEmpty()){
+        if (tblCart.getItems().isEmpty()) {
             btnRemoveItem.setDisable(true);
         }
     }
@@ -566,9 +566,9 @@ public class CashierDashBoardFormController {
     }
 
     public void decreaseQtyOnAction(ActionEvent event) {
-        if(!tblCart.getItems().isEmpty()){
-            if(!txtDiscount.getText().isEmpty()){
-                if(txtDiscount.getText().matches("^[0-9]{1,6}([.][0-9]{2})?$")){
+        if (!tblCart.getItems().isEmpty()) {
+            if (!txtDiscount.getText().isEmpty()) {
+                if (txtDiscount.getText().matches("^[0-9]{1,6}([.][0-9]{2})?$")) {
                     CartTM selectedItem = tblCart.getSelectionModel().getSelectedItem();
                     if (selectedItem != null) {
                         if (selectedItem.getQty() > 1) {
@@ -584,21 +584,21 @@ public class CashierDashBoardFormController {
                     } else {
                         NotificationUtil.setNotifications("Warning..!", "Select Item From The Table..!", 3);
                     }
-                }else{
+                } else {
                     NotificationUtil.setNotifications("Error..!", "Please enter valid discount Price..!", 3);
                 }
-            }else{
+            } else {
                 NotificationUtil.setNotifications("Warning..!", "Please enter discount price..!", 3);
             }
-        }else{
+        } else {
             NotificationUtil.setNotifications("Warning..!", "Table is empty therefore,can't decrease qty", 3);
         }
     }
 
     public void increaseQtyOnAction(ActionEvent event) {
-        if(!tblCart.getItems().isEmpty()){
-            if(!txtDiscount.getText().isEmpty()){
-                if(txtDiscount.getText().matches("^[0-9]{1,6}([.][0-9]{2})?$")){
+        if (!tblCart.getItems().isEmpty()) {
+            if (!txtDiscount.getText().isEmpty()) {
+                if (txtDiscount.getText().matches("^[0-9]{1,6}([.][0-9]{2})?$")) {
                     CartTM selectedItem = tblCart.getSelectionModel().getSelectedItem();
                     if (selectedItem != null) {
                         selectedItem.setQty(selectedItem.getQty() + 1);
@@ -609,13 +609,13 @@ public class CashierDashBoardFormController {
                     } else {
                         NotificationUtil.setNotifications("Warning..!", "Select Item From The Table..!", 3);
                     }
-                }else{
+                } else {
                     NotificationUtil.setNotifications("Error..!", "Please enter valid discount Price..!", 3);
                 }
-            }else{
+            } else {
                 NotificationUtil.setNotifications("Warning..!", "Please enter discount price..!", 3);
             }
-        }else{
+        } else {
             NotificationUtil.setNotifications("Warning..!", "Table is empty therefore,can't increase qty", 3);
         }
     }
@@ -638,9 +638,9 @@ public class CashierDashBoardFormController {
     }
 
     public void placeOrderOnAction(ActionEvent event) {
-        try{
-            if(!existOrder(lblOrderId.getText())){
-                if(!tblCart.getItems().isEmpty() && cmbCustomerId.getValue()!=null && !txtCusName.getText().isEmpty() && !txtCusMobileNumber.getText().isEmpty() && !txtCusTitle.getText().isEmpty() && !txtPostalCode.getText().isEmpty() && !txtCusAddress.getText().isEmpty() && !txtCusCity.getText().isEmpty() && !txtProvince.getText().isEmpty()){
+        try {
+            if (!existOrder(lblOrderId.getText())) {
+                if (!tblCart.getItems().isEmpty() && cmbCustomerId.getValue() != null && !txtCusName.getText().isEmpty() && !txtCusMobileNumber.getText().isEmpty() && !txtCusTitle.getText().isEmpty() && !txtPostalCode.getText().isEmpty() && !txtCusAddress.getText().isEmpty() && !txtCusCity.getText().isEmpty() && !txtProvince.getText().isEmpty()) {
                     ArrayList<OrderDetailDTO> orderDetails = new ArrayList<>();
                     for (CartTM tm : tblCart.getItems()) {
                         orderDetails.add(new OrderDetailDTO(
@@ -655,25 +655,25 @@ public class CashierDashBoardFormController {
 
                     OrderDTO orderDTO = new OrderDTO(lblOrderId.getText(), LocalDate.now(), lblTime.getText(), cmbCustomerId.getValue().getCustID(), new BigDecimal(lblTotalDiscount.getText()), new BigDecimal(lblNetAmount.getText()), orderDetails);
                     boolean orderIsSaved = saveOrder(orderDTO);
-                    if(orderIsSaved){
-                        String url ="lk/ijse/pos/assets/superm.jpg";
-                        printBill(tblCart.getItems(),lblOrderId.getText(),cmbCustomerId.getValue().getCustID(),txtCusName.getText(),txtCusMobileNumber.getText(),new BigDecimal(lblGrossAmount.getText()),new BigDecimal(lblTotalDiscount.getText()),new BigDecimal(lblNetAmount.getText()),url);
-                        NotificationUtil.setNotifications("Order Placement successful..!", "Order has been placed successfully..!", new ImageView(new Image("lk/ijse/pos/assets/Done.png")),3);
+                    if (orderIsSaved) {
+                        String url = "lk/ijse/pos/assets/superm.jpg";
+                        printBill(tblCart.getItems(), lblOrderId.getText(), cmbCustomerId.getValue().getCustID(), txtCusName.getText(), txtCusMobileNumber.getText(), new BigDecimal(lblGrossAmount.getText()), new BigDecimal(lblTotalDiscount.getText()), new BigDecimal(lblNetAmount.getText()), url);
+                        NotificationUtil.setNotifications("Order Placement successful..!", "Order has been placed successfully..!", new ImageView(new Image("lk/ijse/pos/assets/Done.png")), 3);
                         //stage.setFullScreen(false);
                         //Alert alert = new Alert(Alert.AlertType.INFORMATION, "Order has been placed successfully", ButtonType.OK);
 
-                    }else{
-                        NotificationUtil.setNotifications("Failed..!", "Order Placement failed, try again..!",3);
+                    } else {
+                        NotificationUtil.setNotifications("Failed..!", "Order Placement failed, try again..!", 3);
                     }
 
-                }else{
-                    NotificationUtil.setNotifications("Failed..!", "Add items to the cart, Fill the customer data correctly & try again..!",3);
+                } else {
+                    NotificationUtil.setNotifications("Failed..!", "Add items to the cart, Fill the customer data correctly & try again..!", 3);
                 }
-            }else{
-                NotificationUtil.setNotifications("Warning..!", "This Order is already exists..!",3);
+            } else {
+                NotificationUtil.setNotifications("Warning..!", "This Order is already exists..!", 3);
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         lblOrderId.setText(generateNewOrderId());
@@ -687,20 +687,20 @@ public class CashierDashBoardFormController {
         enableOrDisablePlaceOrderButton();
     }
 
-    private boolean saveOrder(OrderDTO orderDTO) throws SQLException, ClassNotFoundException{
+    private boolean saveOrder(OrderDTO orderDTO) throws SQLException, ClassNotFoundException {
         return cashierDashBoardBO.placeOrder(orderDTO);
     }
 
-    public void printBill(ObservableList<CartTM> tmList,String orderId,String customerId,String customerName,String mobileNumber,BigDecimal grossAmount,BigDecimal totalDiscount,BigDecimal netAmount,String url){
+    public void printBill(ObservableList<CartTM> tmList, String orderId, String customerId, String customerName, String mobileNumber, BigDecimal grossAmount, BigDecimal totalDiscount, BigDecimal netAmount, String url) {
         HashMap map = new HashMap();
-        map.put("orderId",orderId);
-        map.put("customerName",customerName);
-        map.put("mobileNumber",mobileNumber);
-        map.put("grossAmount",grossAmount);
-        map.put("totalDiscount",totalDiscount);
-        map.put("netAmount",netAmount);
-        map.put("customerId",customerId);
-        map.put("url",url);
+        map.put("orderId", orderId);
+        map.put("customerName", customerName);
+        map.put("mobileNumber", mobileNumber);
+        map.put("grossAmount", grossAmount);
+        map.put("totalDiscount", totalDiscount);
+        map.put("netAmount", netAmount);
+        map.put("customerId", customerId);
+        map.put("url", url);
 
         try {
             JasperReport compileReport = (JasperReport) JRLoader.loadObject(this.getClass().getResource("../view/reports/Payment Bill.jasper"));
